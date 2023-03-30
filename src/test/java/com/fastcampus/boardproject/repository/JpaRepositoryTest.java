@@ -13,6 +13,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 import com.fastcampus.boardproject.config.JpaConfig;
 import com.fastcampus.boardproject.domain.Article;
+import com.fastcampus.boardproject.domain.UserAccount;
 
 @ActiveProfiles("testdb")
 @DisplayName("JPA 연결 테스트")
@@ -57,7 +58,7 @@ class JpaRepositoryTest {
 		Article article = Article.of(userAccount, "new article", "new content", "#spring");
 
 		// When
-		Article savedArticle = articleRepository.save(article));
+		Article savedArticle = articleRepository.save(article);
 
 		// Then
 		assertThat(articleRepository.count()).isEqualTo(previousCount + 1);
