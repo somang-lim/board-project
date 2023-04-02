@@ -1,13 +1,6 @@
 package com.fastcampus.boardproject.domain;
 
-import java.time.LocalDateTime;
 import java.util.Objects;
-
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Index;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -37,7 +31,7 @@ public class ArticleComment extends AuditingFields {
 	private Long id;
 
 	@Setter @ManyToOne(optional = false) private Article article; // 게시글 (ID)
-	@Setter @ManyToOne(optional = false) private UserAccount userAccount; // 유저 정보 (ID)
+	@Setter @ManyToOne(optional = false) @JoinColumn(name = "userId") private UserAccount userAccount; // 유저 정보 (ID)
 
 	@Setter @Column(nullable = false, length = 500) private String content; // 본문
 
