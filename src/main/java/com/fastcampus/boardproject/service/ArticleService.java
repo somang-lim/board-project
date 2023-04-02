@@ -1,5 +1,7 @@
 package com.fastcampus.boardproject.service;
 
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -69,4 +71,16 @@ public class ArticleService {
 		return articleRepository.count();
 	}
 
+	@Transactional(readOnly = true)
+	public Page<ArticleDto> searchArticlesViaHashtag(String hashtag, Pageable pageable) {
+		if (hashtag == null || hashtag.isBlank()) {
+			return Page.empty(pageable);
+		}
+
+		return articleRepository.findByHashtag(hashtag, pageable).map(ArticleDto::from);
+	}
+
+	public List<String> getHashtags() {
+		return articleRepository.findAllDistinctHashtags();
+	}
 }
