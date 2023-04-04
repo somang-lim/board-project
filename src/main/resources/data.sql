@@ -2,11 +2,11 @@
 -- TODO: 테스트용이지만 비밀번호가 노출된 데이터 세팅. 개선하는 것이 좋을 지 고민해 보자.
 insert into user_account (user_id, user_password, nickname, email, memo, created_at, created_by, modified_at,
                           modified_by)
-values ('imhope', 'asdf1234', 'imhope', 'imhope@mail.com', 'I am imhope.', now(), 'imhope', now(), 'imhope')
+values ('imhope', '{noop}asdf1234', 'imhope', 'imhope@mail.com', 'I am imhope.', now(), 'imhope', now(), 'imhope')
 ;
 insert into user_account (user_id, user_password, nickname, email, memo, created_at, created_by, modified_at,
                           modified_by)
-values ('imhappy', 'asdf1234', 'imhappy', 'imhappy@mail.com', 'I am imhappy.', now(), 'imhappy', now(), 'imhappy')
+values ('imhappy', '{noop}asdf1234', 'imhappy', 'imhappy@mail.com', 'I am imhappy.', now(), 'imhappy', now(), 'imhappy')
 ;
 
 -- 123 게시글
