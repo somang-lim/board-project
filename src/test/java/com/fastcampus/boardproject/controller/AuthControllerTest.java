@@ -2,23 +2,22 @@ package com.fastcampus.boardproject.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.TestComponent;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.fastcampus.boardproject.config.SecurityConfig;
+import com.fastcampus.boardproject.config.TestSecurityConfig;
 
 @DisplayName("View 컨트롤러 - 인증")
-@Import(SecurityConfig.class)
-@WebMvcTest(Void.class)
+@Import(TestSecurityConfig.class)
+@WebMvcTest(AuthControllerTest.EmptyController.class)
 public class AuthControllerTest {
 
 	private final MockMvc mvc;
@@ -28,7 +27,7 @@ public class AuthControllerTest {
 	}
 
 
-	@DisplayName("[view][GET] 로그인페이지 - 정상 호출")
+	@DisplayName("[view][GET] 로그인 페이지 - 정상 호출")
 	@Test
 	void givenNothing_whenTryingToLogIn_thenReturnsLogInView() throws Exception {
 		// Given
@@ -38,5 +37,9 @@ public class AuthControllerTest {
 			.andExpect(status().isOk())
 			.andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML));
 	}
+
+	// 어떤 컨트롤러도 필요하지 않은 테스트로 나타내기 위해 테스트용 빈 컴포넌트를 사용한다.
+	@TestComponent
+	static class EmptyController {}
 
 }

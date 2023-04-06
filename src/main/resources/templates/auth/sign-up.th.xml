@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<thlogic>
+    <attr sel="#header" th:replace="~{header :: header}" />
+    <attr sel="#footer" th:replace="~{footer :: footer}" />
+
+    <attr sel="#sign-up-form" th:action="@{/sign-up}" th:method="post" th:object="${userAccountRequest}">
+        <attr sel="#userId-error" th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}" />
+        <attr sel="#userId-duplicate-error" th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}" />
+        <attr sel="#password-error" th:if="${#fields.hasErrors('userPassword')}" th:errors="*{userPassword}" />
+        <attr sel="#email-error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}" />
+    </attr>
+</thlogic>
