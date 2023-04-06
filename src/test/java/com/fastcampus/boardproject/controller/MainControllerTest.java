@@ -5,6 +5,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -12,9 +13,9 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
-import com.fastcampus.boardproject.config.SecurityConfig;
+import com.fastcampus.boardproject.config.TestSecurityConfig;
 
-@Import(SecurityConfig.class)
+@Import(TestSecurityConfig.class)
 @WebMvcTest(MainController.class)
 public class MainControllerTest {
 
@@ -24,6 +25,7 @@ public class MainControllerTest {
 		this.mvc = mvc;
 	}
 
+	@DisplayName("루트 페이지를 요청하면, 게시판 페이지를 호출한다.")
 	@Test
 	void givenNothing_whenRequestingRootPage_thenRedirectsToArticlesPage() throws Exception {
 		// Given
