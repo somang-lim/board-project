@@ -8,7 +8,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.fastcampus.boardproject.domain.UserAccount;
 import com.fastcampus.boardproject.dto.UserAccountDto;
 
 import lombok.Getter;

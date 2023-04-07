@@ -1,6 +1,8 @@
 package com.fastcampus.boardproject.config;
 
-import static org.mockito.BDDMockito.*;
+
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.BDDMockito.given;
 
 import java.util.Optional;
 
@@ -15,6 +17,7 @@ import com.fastcampus.boardproject.repository.UserAccountRepository;
 public class TestSecurityConfig {
 
 	@MockBean private UserAccountRepository userAccountRepository;
+
 
 	@BeforeTestMethod
 	public void securitySetup() {

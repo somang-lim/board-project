@@ -39,6 +39,7 @@ class JpaRepositoryTest {
 		this.userAccountRepository = userAccountRepository;
 	}
 
+
 	@DisplayName("select 테스트")
 	@Test
 	void givenTestData_whenSelecting_thenWorksFine() {
