@@ -32,6 +32,7 @@ public class DataRestTest {
 		this.mvc = mvc;
 	}
 
+
 	@DisplayName("[api] 게시글 리스트 조회")
 	@Test
 	void givenNothing_whenRequestingArticles_thenReturnsArticlesJsonResponse() throws Exception {

@@ -23,4 +23,5 @@ public class ArticleRepositoryCustomImpl extends QuerydslRepositorySupport imple
 				.where(article.hashtag.isNotNull())
 				.fetch();
 	}
+
 }

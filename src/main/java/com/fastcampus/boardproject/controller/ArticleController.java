@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fastcampus.boardproject.domain.constant.FormStatus;
 import com.fastcampus.boardproject.domain.constant.SearchType;
-import com.fastcampus.boardproject.dto.UserAccountDto;
 import com.fastcampus.boardproject.dto.request.ArticleRequest;
 import com.fastcampus.boardproject.dto.response.ArticleResponse;
 import com.fastcampus.boardproject.dto.response.ArticleWithCommentsResponse;
@@ -133,4 +132,5 @@ public class ArticleController {
 
 		return "redirect:/articles";
 	}
+
 }

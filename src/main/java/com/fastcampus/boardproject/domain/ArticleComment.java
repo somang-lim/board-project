@@ -4,7 +4,6 @@ import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -59,4 +58,5 @@ public class ArticleComment extends AuditingFields {
 	public int hashCode() {
 		return Objects.hash(id);
 	}
+
 }

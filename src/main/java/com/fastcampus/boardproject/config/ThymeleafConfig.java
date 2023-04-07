@@ -1,7 +1,6 @@
 package com.fastcampus.boardproject.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.bind.ConstructorBinding;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
@@ -32,4 +31,5 @@ public class ThymeleafConfig {
 		 */
 		private final boolean decoupledLogic;
 	}
+
 }

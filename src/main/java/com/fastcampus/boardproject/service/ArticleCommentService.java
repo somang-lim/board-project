@@ -27,6 +27,7 @@ public class ArticleCommentService {
 	private final ArticleCommentRepository articleCommentRepository;
 	private final UserAccountRepository userAccountRepository;
 
+
 	@Transactional(readOnly = true)
 	public List<ArticleCommentDto> searchArticleComments(long articleId) {
 		return articleCommentRepository.findByArticle_Id(articleId)
