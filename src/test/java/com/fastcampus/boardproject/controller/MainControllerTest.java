@@ -17,7 +17,7 @@ import com.fastcampus.boardproject.config.TestSecurityConfig;
 
 @Import(TestSecurityConfig.class)
 @WebMvcTest(MainController.class)
-public class MainControllerTest {
+class MainControllerTest {
 
 	private final MockMvc mvc;
 
