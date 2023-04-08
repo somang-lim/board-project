@@ -18,7 +18,7 @@ import com.fastcampus.boardproject.config.TestSecurityConfig;
 @DisplayName("View 컨트롤러 - 인증")
 @Import(TestSecurityConfig.class)
 @WebMvcTest(AuthControllerTest.EmptyController.class)
-public class AuthControllerTest {
+class AuthControllerTest {
 
 	private final MockMvc mvc;
 

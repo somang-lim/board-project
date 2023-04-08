@@ -161,7 +161,7 @@ class ArticleControllerTest {
 	@WithMockUser
 	@DisplayName("[view][GET] 게시글 페이지 - 정상 호출, 인증된 사용자")
 	@Test
-	void givenNothing_whenRequestingArticleView_thenReturnsArticleView() throws Exception {
+	void givenAuthorizedUser_whenRequestingArticleView_thenReturnsArticleView() throws Exception {
 		// Given
 		Long articleId = 1L;
 		long totalCount = 1L;
@@ -247,7 +247,7 @@ class ArticleControllerTest {
 	@WithMockUser
 	@DisplayName("[view][GET] 새 게시글 작성 페이지")
 	@Test
-	void givenNothing_whenRequesting_thenReturnsNewArticlePage() throws Exception {
+	void givenAuthorizedUser_whenRequesting_thenReturnsNewArticlePage() throws Exception {
 		// Given
 
 		// When & Then
