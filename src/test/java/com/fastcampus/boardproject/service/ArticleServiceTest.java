@@ -257,12 +257,12 @@ class ArticleServiceTest {
 
 		// Then
 		assertThat(article)
-				.hasFieldOrPropertyWithValue("title", dto.title())
-				.hasFieldOrPropertyWithValue("content", dto.content())
-				.extracting("hashtags", as(InstanceOfAssertFactories.COLLECTION))
-					.hasSize(1)
-						.extracting("hashtagName")
-							.containsExactly("springboot");
+			.hasFieldOrPropertyWithValue("title", dto.title())
+			.hasFieldOrPropertyWithValue("content", dto.content())
+			.extracting("hashtags", as(InstanceOfAssertFactories.COLLECTION))
+				.hasSize(1)
+				.extracting("hashtagName")
+					.containsExactly("springboot");
 		then(articleRepository).should().getReferenceById(dto.id());
 		then(userAccountRepository).should().getReferenceById(dto.userAccountDto().userId());
 		then(articleRepository).should().flush();
@@ -312,7 +312,7 @@ class ArticleServiceTest {
 	void givenArticleId_whenDeletingArticle_thenDeletesArticle() {
 		// Given
 		Long articleId = 1L;
-		String userId = "imhope";
+		String userId = "imhappy";
 		given(articleRepository.getReferenceById(articleId)).willReturn(createArticle());
 		willDoNothing().given(articleRepository).deleteByIdAndUserAccount_UserId(articleId, userId);
 		willDoNothing().given(articleRepository).flush();
