@@ -91,7 +91,6 @@ public class ArticleService {
 				Set<Long> hashtagIds = article.getHashtags().stream()
 						.map(Hashtag::getId)
 						.collect(Collectors.toUnmodifiableSet());
-				article.clearHashtags();
 				articleRepository.flush();
 
 				hashtagIds.forEach(hashtagService::deleteHashtagWithoutArticles);
